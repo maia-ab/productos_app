@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:productos_app/widgets/widgets.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -9,8 +10,7 @@ class HomeScreen extends StatelessWidget {
       ),
       body: ListView.builder(
           itemCount: 10,
-          itemBuilder: (BuildContext context, int index) =>
-              Text('Item: $index')),
+          itemBuilder: (BuildContext context, int index) => ProductCard()),
       floatingActionButton:
           FloatingActionButton(child: const Icon(Icons.add), onPressed: () {}),
     );
