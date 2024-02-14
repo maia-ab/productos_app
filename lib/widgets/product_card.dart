@@ -15,7 +15,8 @@ class ProductCard extends StatelessWidget {
           children: [
             _BackgroundImage(),
             _ProductDetails(),
-            Positioned(top: 0, right: 0, child: _PriceTag())
+            Positioned(top: 0, right: 0, child: _PriceTag()),
+            Positioned(top: 0, left: 0, child: _NotAvailable())
           ],
         ),
       ),
@@ -52,6 +53,34 @@ class _PriceTag extends StatelessWidget {
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 10),
           child: Text('\$103.99',
+              style: TextStyle(color: Colors.white, fontSize: 20)),
+        ),
+      ),
+    );
+  }
+}
+
+class _NotAvailable extends StatelessWidget {
+  const _NotAvailable({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    // ignore: sized_box_for_whitespace
+    return Container(
+      width: 100,
+      height: 70,
+      alignment: Alignment.center,
+      decoration: const BoxDecoration(
+          color: Colors.pink,
+          borderRadius: BorderRadius.only(
+              bottomRight: Radius.circular(25), topLeft: Radius.circular(25))),
+      child: const FittedBox(
+        fit: BoxFit.contain,
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 10),
+          child: Text('No disponible',
               style: TextStyle(color: Colors.white, fontSize: 20)),
         ),
       ),
